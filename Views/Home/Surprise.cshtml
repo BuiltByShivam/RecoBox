@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Surprise Me";
+    var surprise = ViewBag.SurpriseItem as string;
+}
+
+<div class="text-center mt-5">
+    <h2 class="display-5 mb-4">Surprise Recommendation</h2>
+
+    @if (!string.IsNullOrEmpty(surprise))
+    {
+        <div class="card mx-auto shadow-lg border-0" style="max-width: 600px;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold mb-3">Here's a random top-rated pick for you:</h5>
+                <p class="card-text fs-5 text-primary">@surprise</p>
+                <p class="text-muted small mt-3">We hope this made your day a bit more interesting!</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning mt-4">No surprise items found. Try again later!</div>
+    }
+
+    <a href="/" class="btn btn-outline-secondary mt-4 px-4">Back to Home</a>
+</div>

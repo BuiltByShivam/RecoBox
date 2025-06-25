@@ -1,0 +1,66 @@
+ItemID,MovieName,Genre,Year,AverageRating
+101,Inception,Action,2010,4.8
+102,Interstellar,Sci-Fi,2014,4.7
+103,The Matrix,Action,1999,4.9
+104,The Dark Knight,Action,2008,4.8
+105,Avatar,Sci-Fi,2009,4.5
+106,The Hangover,Comedy,2009,4.2
+107,Superbad,Comedy,2007,4.0
+108,Parasite,Thriller,2019,4.9
+109,Joker,Drama,2019,4.6
+110,Avengers: Endgame,Action,2019,4.8
+111,Tenet,Sci-Fi,2020,4.1
+112,The Godfather,Drama,1972,4.9
+113,Forrest Gump,Drama,1994,4.7
+114,Back to the Future,Sci-Fi,1985,4.6
+115,The Conjuring,Horror,2013,4.3
+116,Her,Romance,2013,4.4
+117,Titanic,Romance,1997,4.6
+118,The Notebook,Romance,2004,4.1
+119,La La Land,Romance,2016,4.2
+120,Shutter Island,Thriller,2010,4.5
+121,The Prestige,Mystery,2006,4.3
+122,Fight Club,Drama,1999,4.8
+123,The Social Network,Drama,2010,4.1
+124,Mean Girls,Comedy,2004,3.9
+125,Deadpool,Action,2016,4.0
+126,Doctor Strange,Sci-Fi,2016,4.3
+127,The Meg,Horror,2018,3.2
+128,Get Out,Horror,2017,4.4
+129,The Nun,Horror,2018,2.9
+130,A Quiet Place,Horror,2018,4.5
+131,The Ring,Horror,2002,4.0
+132,The Babadook,Horror,2014,4.1
+133,Inside Out,Animation,2015,4.7
+134,Up,Animation,2009,4.8
+135,Finding Nemo,Animation,2003,4.5
+136,"Monsters, Inc.",Animation,2001,4.4
+137,Soul,Animation,2020,4.2
+138,Luca,Animation,2021,4.0
+139,Moana,Animation,2016,4.3
+140,Encanto,Animation,2021,4.1
+141,Coco,Animation,2017,4.7
+142,1917,War,2019,4.4
+143,Dunkirk,War,2017,4.2
+144,The Imitation Game,Biography,2014,4.5
+145,The Theory of Everything,Biography,2014,4.6
+146,Bohemian Rhapsody,Biography,2018,4.3
+147,Black Panther,Action,2018,4.1
+148,Iron Man,Action,2008,4.2
+149,Thor: Ragnarok,Action,2017,4.5
+150,Guardians of the Galaxy,Action,2014,4.3
+151,Ant-Man,Action,2015,4.0
+152,Fantastic Beasts,Fantasy,2016,3.9
+153,Harry Potter and the Sorcerer's Stone,Fantasy,2001,4.7
+154,Harry Potter and the Deathly Hallows – Part 2,Fantasy,2011,4.8
+155,The Hobbit: An Unexpected Journey,Fantasy,2012,4.0
+156,The Lord of the Rings: The Fellowship of the Ring,Fantasy,2001,4.9
+157,The Lord of the Rings: The Return of the King,Fantasy,2003,5.0
+158,The Lord of the Rings: The Two Towers,Fantasy,2002,4.9
+159,The Witcher: Nightmare of the Wolf,Fantasy,2021,4.2
+160,Everything Everywhere All at Once,Sci-Fi,2022,4.6
+161,The Whale,Drama,2022,4.2
+162,Knives Out,Mystery,2019,4.4
+163,Glass Onion,Mystery,2022,4.0
+164,Oppenheimer,Drama,2023,4.7
+165,Barbie,Comedy,2023,3.8

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Movie Recommendations";
+    var genres = ViewBag.Genres as List<string> ?? new List<string>();
+    var selectedGenre = ViewBag.SelectedGenre as string;
+    var selectedAge = ViewBag.SelectedAge as string;
+    var movies = ViewBag.Movies as List<MovieProductRecommenderWeb.Models.Movie>;
+}
+
+<div class="text-center">
+    <h2 class="display-5 mb-4">Movie Recommendations</h2>
+
+    <form method="get" class="mb-4">
+        <div class="row justify-content-center">
+            <!-- Genre dropdown -->
+            <div class="col-md-3">
+                <label for="genre" class="form-label">Select Genre</label>
+                <select name="genre" id="genre" class="form-select">
+                    @foreach (var genre in genres)
+                    {
+                        var selected = genre == selectedGenre ? "selected=\"selected\"" : "";
+                        @:<option value="@genre" @Html.Raw(selected)>@genre</option>
+                    }
+                </select>
+            </div>
+
+            <!-- Age radio buttons -->
+            <div class="col-md-3">
+                <label class="form-label">Age</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="new" value="new" @(selectedAge == "new" ? "checked" : "") />
+                    <label class="form-check-label" for="new">New</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="old" value="old" @(selectedAge == "old" ? "checked" : "") />
+                    <label class="form-check-label" for="old">Old</label>
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Get Recommendations</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Result Section -->
+@if (movies != null && movies.Any())
+{
+    <div class="row justify-content-center">
+        @foreach (var movie in movies)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-lg h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary">@movie.Name</h5>
+                        <hr />
+                        <p class="card-text mb-1"><strong>Genre:</strong> @movie.Genre</p>
+                        <p class="card-text mb-1"><strong>Year:</strong> @movie.Year</p>
+                        <p class="card-text mb-0"><strong>Rating:</strong> <span class="text-warning fw-bold">⭐ @movie.Rating</span></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else if (movies != null)
+{
+    <div class="alert alert-warning text-center">No recommendations found for your selection.</div>
+}

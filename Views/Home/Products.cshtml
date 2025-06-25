@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Product Recommendations";
+    var categories = ViewBag.Categories as List<string> ?? new List<string>();
+    var selectedCategory = ViewBag.SelectedCategory as string;
+    var selectedAge = ViewBag.SelectedAge as string;
+    var products = ViewBag.Products as List<MovieProductRecommenderWeb.Models.Product>;
+}
+
+<div class="text-center">
+    <h2 class="display-5 mb-4">Product Recommendations</h2>
+
+    <form method="get" class="mb-4">
+        <div class="row justify-content-center">
+            <!-- Category Dropdown -->
+            <div class="col-md-3">
+                <label for="category" class="form-label">Select Category</label>
+                <select name="category" id="category" class="form-select">
+                    @foreach (var category in categories)
+                    {
+                        var selected = category == selectedCategory ? "selected=\"selected\"" : "";
+                        @:<option value="@category" @Html.Raw(selected)>@category</option>
+                    }
+                </select>
+            </div>
+
+            <!-- Age Radio Buttons -->
+            <div class="col-md-3">
+                <label class="form-label">Age</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="new" value="new" @(selectedAge == "new" ? "checked" : "") />
+                    <label class="form-check-label" for="new">New</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="old" value="old" @(selectedAge == "old" ? "checked" : "") />
+                    <label class="form-check-label" for="old">Old</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-success w-100">Get Recommendations</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Results Section -->
+@if (products != null && products.Any())
+{
+    <div class="row justify-content-center">
+        @foreach (var product in products)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-success">@product.Name</h5>
+                        <hr />
+                        <p class="card-text mb-1"><strong>Brand:</strong> @product.Brand</p>
+                        <p class="card-text mb-1"><strong>Category:</strong> @product.Category</p>
+                        <p class="card-text mb-1"><strong>Year:</strong> @product.Year</p>
+                        <p class="card-text mb-0"><strong>Rating:</strong> <span class="text-warning">⭐ @product.Rating</span></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else if (products != null)
+{
+    <div class="alert alert-warning text-center">No recommendations found for your selection.</div>
+}
